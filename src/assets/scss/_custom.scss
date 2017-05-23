@@ -1,0 +1,286 @@
+/// Triangle helper mixin
+/// @param {Direction} $direction - Triangle direction, either `top`, `right`, `bottom` or `left`
+/// @param {Color} $color [currentcolor] - Triangle color 
+/// @param {Length} $size [1em] - Triangle size
+@mixin triangle($direction, $color: currentcolor, $size: 1em) {
+  @if not index(top right bottom left, $direction) {
+    @error "Direction must be either `top`, `right`, `bottom` or `left`.";
+  }
+
+  width: 0;
+  height: 0;
+  content: '';
+  z-index: 999;
+  border-#{opposite-position($direction)}: ($size * 1.5) solid $color;
+
+  $perpendicular-borders: $size solid transparent;
+
+  @if $direction == top or $direction == bottom {
+    border-left:   $perpendicular-borders;
+    border-right:  $perpendicular-borders;
+  } @else if $direction == right or $direction == left {
+    border-bottom: $perpendicular-borders;
+    border-top:    $perpendicular-borders;
+  }
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+$logo-red: #e73942;
+$logo-green: #73c153;
+$logo-blue: #018ed6;
+$footer-height: 48px;
+
+.bg-gray {
+  background-color: #DDD;
+  height: 100%;
+}
+
+#page-wrapper {
+    min-height: 100%;
+    position: relative;
+}
+#orbit-wrapper {
+  margin-top: -27px;
+}
+
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
+}
+
+header.header3 {
+  box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.4);
+  img {
+    max-height: 50px;
+  }
+  #main-menu {
+    padding: 0;
+    background-color: #FFFFFF;
+    &>div {
+      background-color: #FFFFFF;
+      //box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.4);
+    }
+    ul {
+      background-color: #FFFFFF;
+      //padding-left: 70px;
+      li:hover {
+        background-color: #F0F0F0;
+      }
+      li {
+        background-color: inherit;
+        a {
+          background-color: inherit;
+          &.active {
+            background-color: inherit;
+            color: $logo-blue !important;
+          }
+        }
+        ul {
+          background-color: #FFFFFF;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  .top-bar-right > ul > li:first-child {
+    height: 72px;
+  }
+}
+
+header.header2 {
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+    img.spinner {
+        -webkit-animation: spin 250ms linear infinite;
+        -moz-animation: spin 250ms linear infinite;
+        animation: spin 250ms linear infinite;
+    }
+    ul {
+        list-style: none;
+        margin: 0 auto;
+        li {
+            display: inline-block;
+            width: 80px;
+            padding: 5px 5px 2px 5px;
+            margin: 0 10px;
+            font-weight: bolder;
+            border-bottom: 4px solid #fefefe;
+            position: relative;
+            &.long {
+                width: 180px;
+                &.active {
+                    &::after {
+                        left: 80px;
+                    }
+                }
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+                &:hover {
+                    color: inherit;
+                }
+            }
+            &:hover {
+                cursor: pointer;
+                //border-radius: 10px;
+                border-bottom: 4px solid $logo-blue;
+                color: $logo-red;
+            }
+            &.active {
+                color: $logo-red;
+                border-bottom: 4px solid $logo-blue;
+                a {
+                   color: $logo-red;
+                }
+                &::after {
+                    //@include triangle(bottom, $logo-blue, 20px);
+                    position: absolute;
+                    top: 0px;
+                    left: 30px;
+                    width: 0;
+                    height: 0;
+                    content: '';
+                    z-index: 2;
+                    border-top: 5px solid $logo-green;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                }
+            }
+        }
+    }
+}
+
+body {
+  //background-color: rgba(1, 142, 214, 0.1);
+  //position: relative;
+  &::after {
+    content: "";
+    background: url(/assets/img/bg/25.jpg);
+    background-size: cover;
+    opacity: 0.25;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+    //height: 100%;
+    //width: 100%;
+  }
+}
+
+#content-wrapper {
+    p, h2, h2::after {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    hr {
+      border-color: #666;
+    }
+    padding: 30px 0px;
+    //margin-bottom: -$footer-height;
+    min-height: 100%;
+
+    &::after {
+        content: '';
+        display: block;
+        height: $footer-height;
+    }
+    .content-header {
+        margin-bottom: 30px;
+    }
+    .heal-section {
+      div {
+        //position: relative;
+        h1 {
+          margin-top: 10px;
+        }
+        &:nth-child(n) {
+          background-color: rgba(1, 142, 214, 0.8);
+        }
+        &:nth-child(2n) {
+          background-color: rgba(1, 142, 214, 0.6);
+        }
+        button {
+          //position: relative;
+          //bottom: 0;
+        }
+        h1, h4, p {
+          color: #FFFFFF;
+        }
+        a {
+          color: #666;
+        }
+      }
+    }
+  section.methods-section {
+    h2 {
+      position: relative;
+      margin-top: 10px;
+      padding-bottom: 7px;
+    }
+    h2::before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 1px;
+      bottom: 0;
+      left: 5px;
+      border-bottom: 3px solid $logo-red;
+    }
+  }
+}
+
+footer {
+    border-top: 1px solid rgba(0,0,0,0.4);
+    background-color: rgba(230, 230, 230, 1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $footer-height;
+    padding: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    a {
+        color: $logo-blue;
+        font-weight: bolder;
+        &:hover{
+            color: darken($logo-blue, 10%);
+        }
+    }
+}
+
+#map {
+    height: 300px;
+    width: 100%;
+    margin: 0 auto 30px auto;
+
+}
+
+i.material-icons.md-48 {
+    font-size: 48px;
+    color: $logo-green;
+    &.green {
+        color: $logo-green;
+    }
+    &.red {
+        color: $logo-red;
+    }
+    &.blue {
+        color: $logo-blue;
+    }
+}

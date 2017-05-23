@@ -1,0 +1,17 @@
+<header>
+    <div class="row">
+        <div class="columns small-2 small-offset-5">
+            <img src="assets/img/oczbatyn2.png" alt="Ocz Batyn logo">
+        </div>
+    </div>
+    <div class="row text-center">
+        <ul>
+            <li {{#ifpage 'index'}}class="active"{{/ifpage}}><a href="index.html">Home</a></li>
+            <li {{#ifpage 'about'}}class="active"{{/ifpage}}><a href="about.html">Zespół</a></li>
+            <li class="long{{#ifpage 'offer'}} active{{/ifpage}}"><a href="offer.html">Medycyna Mongolska</a></li>
+            <li {{#ifpage 'visit'}}class="active"{{/ifpage}}><a href="visit.html">Wizyty</a></li>
+            <!--<li {{#ifpage 'other'}}class="active"{{/ifpage}}><a href="other.html">Other</a></li>-->
+            <li {{#ifpage 'contact'}}class="active"{{/ifpage}}><a href="contact.html">Kontakt</a></li>
+        </ul>
+    </div>
+</header>

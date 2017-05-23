@@ -1,0 +1,96 @@
+<div class="row text-center">
+    <div class="content-header">
+        <h2 class="subheader">
+            Postaramy się odpowiedzieć na wszystkie Państwa pytania
+        </h2>
+    </div>
+</div>
+<div id="map"></div>
+<div class="row">
+    <div class="columns medium-12 large-6">
+        <div class="row">
+            <div class="columns small-12"><h3>Wyślij nam wiadomość</h3></div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="columns small-12 medium-6">
+                    <input type="text" placeholder="First name">
+                </div>
+                <div class="columns small-12 medium-6">
+                    <input type="text" placeholder="Last name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns small-12 medium-6">
+                    <input type="text" placeholder="E-mail address">
+                </div>
+                <div class="columns small-12 medium-6">
+                    <input type="text" placeholder="Phone number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns small-12">
+                    <textarea placeholder="Message..." rows=5></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns small-12">
+                    <button class="button">Send message</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="columns medium-12 large-6 text-center">
+        <div class="callouts-set row">
+            <div class="columns small-12 medium-6">
+                <div class="callout">
+                    <i class="material-icons md-48 red">alarm</i><br>
+                    <h4 style="margin-left:-5px;">Godziny otwarcia</h4>
+                    pn-pt: 9-18<br>
+                    sob: 10-14
+                </div>
+            </div>
+            <div class="columns small-12 medium-6">
+                <div class="callout">
+                    <i class="material-icons md-48 green">mail</i><br>
+                    <h4>Napisz do nas</h4>
+                    <a href="mailto:kontakt@medycyna-mongolska.pl">kontakt@medycyna-mongolska.pl</a>
+                </div>
+            </div>
+        </div>
+        <div class="callouts-set row">
+            <div class="columns small-12 medium-6">
+                <div class="callout">
+                    <i class="material-icons md-48 green">phone</i><br>
+                    <h4>Zadzwoń do nas</h4>
+                    22 826 97 76<br>
+                    &nbsp;
+                </div>
+            </div>
+            <div class="columns small-12 medium-6">
+                <div class="callout">
+                    <i class="material-icons md-48 blue">place</i><br>
+                    <h4>Nasz gabinet</h4>
+                    ul. Bednarska 26 / 1<br>
+                    00-321 Warszawa
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function initMap() {
+        new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 52.245062,lng: 21.015831},
+          zoom: 8,
+            scrollwheel: false,
+            zoomControl : true,
+            zoomControlOpt: {
+                style : 'SMALL',
+                position: 'TOP_LEFT'
+            }
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWYmchRXuMJmWGaBFh7eWRgrU-ifABPAs&callback=initMap" async defer></script>
+

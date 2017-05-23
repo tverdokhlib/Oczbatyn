@@ -1,0 +1,47 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocz Batyn | Tradycyjna medycyna mongolska</title>
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body>
+      <div id="page-wrapper">
+        <header>
+            <div class="row">
+                <div class="columns small-2 small-offset-5">
+                    <img src="../assets/img/oczbatyn2.png" alt="Ocz Batyn logo">
+                </div>
+            </div>
+            <div class="row text-center">
+                <ul>
+                    <li {{#ifpage 'index'}}class="active"{{/ifpage}}><a href="index.html">Home</a></li>
+                    <li {{#ifpage 'about'}}class="active"{{/ifpage}}><a href="about.html">About</a></li>
+                    <li {{#ifpage 'offer'}}class="active"{{/ifpage}}><a href="offer.html">Offer</a></li>
+                    <li {{#ifpage 'visit'}}class="active"{{/ifpage}}><a href="visit.html">Visit</a></li>
+                    <li {{#ifpage 'other'}}class="active"{{/ifpage}}><a href="other.html">Other</a></li>
+                    <li {{#ifpage 'contact'}}class="active"{{/ifpage}}><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        <div id="content-wrapper">
+
+    {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+    {{> body}}
+
+        </div>
+        <footer>
+            <div class="row text-center">
+                Copyrights © 2016 <a href="https://www.logility.pl/">Logility.pl</a>. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    <script src="{{root}}assets/js/app.js"></script>
+  </body>
+</html>

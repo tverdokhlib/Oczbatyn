@@ -1,0 +1,34 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+
+<!doctype html>
+<html class="no-js" lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocz Batyn | Tradycyjna medycyna mongolska</title>
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  </head>
+  <body>
+      <div id="page-wrapper">
+          {{> header2}}
+
+        <div id="content-wrapper">
+
+    {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+    {{> body}}
+
+        </div>
+        <footer>
+            <div class="row text-center">
+                Copyrights © 2016 <a href="https://www.logility.pl/">Logility.pl</a>. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    <script src="{{root}}assets/js/app.js"></script>
+    <!--<script src="{{root}}assets/js/cookiebar-latest.js"></script>-->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/cookie-bar/1/cookiebar-latest.min.js"></script>
+  </body>
+</html>
