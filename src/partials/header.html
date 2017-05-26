@@ -6,12 +6,17 @@
     </div>
     <div class="row text-center">
         <ul>
-            <li {{#ifpage 'index'}}class="active"{{/ifpage}}><a href="index.html">Home</a></li>
-            <li {{#ifpage 'about'}}class="active"{{/ifpage}}><a href="about.html">Zespół</a></li>
-            <li class="long{{#ifpage 'offer'}} active{{/ifpage}}"><a href="offer.html">Medycyna Mongolska</a></li>
-            <li {{#ifpage 'visit'}}class="active"{{/ifpage}}><a href="visit.html">Wizyty</a></li>
-            <!--<li {{#ifpage 'other'}}class="active"{{/ifpage}}><a href="other.html">Other</a></li>-->
-            <li {{#ifpage 'contact'}}class="active"{{/ifpage}}><a href="contact.html">Kontakt</a></li>
+            <li class="link {{#ifpage 'index'}}active{{/ifpage}}"><a href="index.html">Home</a></li>
+            <li class="link {{#ifpage 'about'}}active{{/ifpage}}"><a href="about.html">Zespół</a></li>
+            <li class="link {{#ifpage 'methods'}}active{{/ifpage}} {{#ifpage 'publications'}}active{{/ifpage}}">
+                <a>Medycyna Mongolska</a>
+                <ul class="menu vertical">
+                    <li><a href="methods.html">Jak leczymy</a></li>
+                    <li><a href="publications.html">Publikacje</a></li>
+                </ul>
+            </li>
+            <!-- <li class="link {{#ifpage 'visit'}}active{{/ifpage}}"><a href="visit.html">Wizyty</a></li> -->
+            <li class="link {{#ifpage 'contact'}}active{{/ifpage}}"><a href="contact.html">Kontakt</a></li>
         </ul>
     </div>
 </header>
