@@ -10,6 +10,11 @@ import sherpa   from 'style-sherpa';
 import yaml     from 'js-yaml';
 import fs       from 'fs';
 
+import imagemin from 'gulp-imagemin';
+import pngquant from 'imagemin-pngquant';
+import imageminJpegRecompress from 'imagemin-jpeg-recompress';
+
+
 // Load all Gulp plugins into one variable
 const $ = plugins();
 
@@ -110,9 +115,12 @@ function javascript() {
 // In production, the images are compressed
 function images() {
   return gulp.src('src/assets/img/**/*')
-    .pipe($.if(PRODUCTION, $.imagemin({
-      progressive: true
-    })))
+    .pipe($.if(PRODUCTION, imagemin([imageminJpegRecompress({
+        loops:4,
+        min: 40,
+        max: 80,
+        quality: 'high',
+      }), pngquant()])))
     .pipe(gulp.dest(PATHS.dist + '/assets/img'));
 }
 
