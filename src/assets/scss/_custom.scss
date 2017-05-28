@@ -388,6 +388,7 @@ header {
   }
 }
 
+
 @media screen and (min-width: 64em) {
   .publications .largeNew {
     width: 37.5%;
@@ -399,5 +400,12 @@ header {
   .methods .row .row{
     margin-left: 43%;
     margin-right: -35%;
+  }
+}
+
+
+@media screen and (max-width: 1024px){
+  .methods .menu{
+    display: none;
   }
 }
