@@ -279,18 +279,22 @@ i.material-icons.md-48 {
 }
 
 // Roman's 2017 fixes
+
 header {
+  width: 100%;
   user-select: none;
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, .5);
   .contacts {
-    float: right;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
     margin: 1% 2% 0 0;
-    white-space: nowrap;
-    .link {
-      box-sizing: border-box;
+    .link-1 {
+      float: right;
       color: black;
-      display: inline-block;
-      padding: 0 10%;
+      padding: 0 1%;
+      box-shadow: inset 0 0.5px 10px transparent;
       &:hover {
         box-shadow: inset 0 0.5px 10px rgba(0, 0, 0, .15);
         color: #e73942;
