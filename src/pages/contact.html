@@ -46,7 +46,7 @@
                     <div class="callout">
                         <i class="material-icons md-48 red">alarm</i><br>
                         <h4 style="margin-left:-5px;">Godziny otwarcia</h4>
-                        pn-pt: 9-18<br>
+                        pn-pt: 10-18<br>
                         sob: 10-14
                     </div>
                 </div>
@@ -78,19 +78,22 @@
             </div>
         </div>
     </div>
+   
     <script>
-        function initMap() {
-            new google.maps.Map(document.getElementById('map'), {
-              center: {lat: 52.245062,lng: 21.015831},
-              zoom: 8,
-                scrollwheel: false,
-                zoomControl : true,
-                zoomControlOpt: {
-                    style : 'SMALL',
-                    position: 'TOP_LEFT'
-                }
-            });
-        }
+      function initMap() {
+        var uluru = {lat: 52.245062, lng: 21.015831};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8   ,
+          scrollwheel: false,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: maps
+        });
+      }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWYmchRXuMJmWGaBFh7eWRgrU-ifABPAs&callback=initMap" async defer></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwuo8YNm-UuBRZ78B4kYgJSOf2l2stve4&callback=initMap">
+    </script>
 </div>
