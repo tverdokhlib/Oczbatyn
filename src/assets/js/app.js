@@ -1,4 +1,4 @@
-var hostEmail = 'vlad.trishch@gmail.com'
+var hostEmail = 'kontakt@medycyna-mongolska.pl'
 /**********************************/
 
 
