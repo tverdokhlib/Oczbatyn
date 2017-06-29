@@ -374,18 +374,18 @@ header {
   }
 }
 
-.about .doc .thumbnail{
-  margin-bottom: -20rem;
+@media screen and (min-width: 1024px) {
+  .about .doc .thumbnail{
+    margin-top: 3em;
+  }
 }
-.methods .acupuncture-photo{
-  margin-bottom: -130%;
+
+@media screen and (max-width: 1024px) {
+  .about {
+    text-align: justify;
+  }
 }
-.methods .bubble-photo{
-  margin-bottom: -117%;
-}
-.methods .manualtherapy-photo{
-  margin-bottom: -126%;
-}
+
 .main {
   .content-wrapper {
     width: 90%;
@@ -393,21 +393,15 @@ header {
   }
 }
 
+.publications .thumbnail {
+  width: 100%;
+}
 
 @media screen and (min-width: 64em) {
   .publications .largeNew {
     width: 37.5%;
   }
 }
-
-
-@media screen and (min-width: 40em){
-  .methods .row .row{
-    margin-left: 43%;
-    margin-right: -35%;
-  }
-}
-
 
 @media screen and (max-width: 1024px){
   .methods .menu{
