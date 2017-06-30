@@ -60,3 +60,4 @@ PATHS:
     #- "src/assets/js/cookiebar-latest.js"
     - "src/assets/js/!(app).js"
     - "src/assets/js/app.js"
+    - "bower_components/jquery-fatNav/dist/jquery.fatNav.min.js"

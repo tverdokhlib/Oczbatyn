@@ -1,5 +1,5 @@
 var hostEmail = 'kontakt@medycyna-mongolska.pl'
-/**********************************/
+  /**********************************/
 
 
 $(document).foundation();
@@ -22,6 +22,10 @@ $(document).ready(function() {
 
 });
 
+
+$(document).ready(function() {
+  $.fatNav()
+})
 
 $(document).ready(function() {
   $('#contact-form').submit(function(e) {
