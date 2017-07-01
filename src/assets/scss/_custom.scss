@@ -285,7 +285,6 @@ header {
   user-select: none;
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, .5);
   .contacts {
-
     width: 100%;
     position: absolute;
     right: 0;
@@ -405,12 +404,6 @@ header {
 
 @media screen and (max-width: 640px) {
   .navigation {
-    display: none !important;
-  }
-}
-
-@media screen and (min-width: 640px) {
-  .hamburger {
     display: none !important;
   }
 }
