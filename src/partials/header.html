@@ -1,8 +1,18 @@
 <header>
-  <div class="contacts">
-    <a class='link-1' href="index.html">PL</a>
-    <a style="display: none;" class='link-1' href="http://logility.pl/ocz/en/">EN</a>
-    <a class="link-1" href="https://www.facebook.com/Dr-nauk-med-Ocz-BATYN-Tradycyjna-Medycyna-Mongolska-294199474013325"><span class='fa fa-facebook'></span></a>
+  <div class="row header-buttons">
+    <div class='columns small-8 small-offset-4'>
+      <div class='columns small-1 small-offset-10'>
+        <a href='https://fb.com'><img class="header-button" src="./assets/img/fb.png" alt="f"></a>
+      </div>
+      <div class='columns small-1'>
+        <a href='#'><img class="header-button" src="./assets/img/pl.png" alt="PL"></a>
+      </div>
+      <!--
+      <div class='columns small-1'>
+        <img class="header-button" src="./assets/img/en.png" alt="">
+      </div>
+      -->
+    </div>
   </div>
   <div class="row">
     <div class="columns small-2 small-offset-5">
@@ -26,18 +36,32 @@
   </div>
   <div class='fat-nav'>
     <div class='fat-nav__wrapper'>
-      <ul>
-        <li class="fat-nav-link {{#ifpage 'index'}}active{{/ifpage}}"><a href="index.html">Home</a></li>
-        <li class="fat-nav-link {{#ifpage 'about'}}active{{/ifpage}}"><a href="about.html">Zespół</a></li>
-        <li class="fat-nav-link {{#ifpage 'methods'}}active{{/ifpage}}"><a href="methods.html">Jak leczymy</a></li>
-        <li class="fat-nav-link {{#ifpage 'publications'}}active{{/ifpage}}"><a href="publications.html">Publikacje</a></li>
-        <!-- <li class="link {{#ifpage 'visit'}}active{{/ifpage}}"><a href="visit.html">Wizyty</a></li> -->
-        <li class="fat-nav-link {{#ifpage 'contact'}}active{{/ifpage}}"><a href="contact.html">Kontakt</a></li>
-      </ul>
-      <div class="header-buttons">
-        <img class="header-button" src="./assets/img/fb.png" alt="">
-        <img class="header-button" src="./assets/img/pl.png" alt="">
-        <!--<img class="header-button" src="./assets/img/en.png" alt="">-->
+      <div class='row'>
+        <div class='columns small-12'>
+          <ul>
+            <li class="fat-nav-link {{#ifpage 'index'}}active{{/ifpage}}"><a href="index.html">Home</a></li>
+            <li class="fat-nav-link {{#ifpage 'about'}}active{{/ifpage}}"><a href="about.html">Zespół</a></li>
+            <li class="fat-nav-link {{#ifpage 'methods'}}active{{/ifpage}}"><a href="methods.html">Jak leczymy</a></li>
+            <li class="fat-nav-link {{#ifpage 'publications'}}active{{/ifpage}}"><a href="publications.html">Publikacje</a></li>
+            <!-- <li class="link {{#ifpage 'visit'}}active{{/ifpage}}"><a href="visit.html">Wizyty</a></li> -->
+            <li class="fat-nav-link {{#ifpage 'contact'}}active{{/ifpage}}"><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row fat-nav-buttons">
+        <div class='columns small-4 small-offset-4'>
+          <div class='columns small-6'>
+            <a href='https://fb.com'><img class="header-button" src="./assets/img/fb.png" alt="f"></a>
+          </div>
+          <div class='columns small-6'>
+            <a href='#'><img class="header-button" src="./assets/img/pl.png" alt="PL"></a>
+          </div>
+          <!--
+          <div class='columns small-1'>
+            <img class="header-button" src="./assets/img/en.png" alt="">
+          </div>
+          -->
+        </div>
       </div>
     </div>
   </div>
